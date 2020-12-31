@@ -28,3 +28,22 @@ end
     plant.save
 end
 
+# t.string "event_type"
+# t.date "due_date"
+# t.boolean "completed", default: false
+# t.bigint "plant_id", null: false
+# t.datetime "created_at", precision: 6, null: false
+# t.datetime "updated_at", precision: 6, null: false
+# t.index ["plant_id"], name: "index_care_events_on_plant_id"
+# validates :event_type, inclusion: ["water", "fertilize", "repot", "prune"]
+
+
+10.times do
+    care_event = CareEvent.new
+    event_types = ["water", "fertilize", "repot", "prune"]
+    random_event_type_index = Faker::Number.within(range: 0..3)
+    care_event.event_type = event_types[random_event_type_index]
+    care_event.due_date = Faker::Date.between(from: '2021-01-01', to: '2021-12-31')
+    care_event.plant_id = Faker::Number.within(range: 1..5)
+    care_event.save
+end
