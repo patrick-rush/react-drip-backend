@@ -28,3 +28,6 @@
 
 # Ignore notes files
 /notes.md
+
+# Ignore environment files
+.env
