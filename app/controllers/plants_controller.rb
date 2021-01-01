@@ -3,9 +3,9 @@ class PlantsController < ApplicationController
 
   # GET /plants
   def index
-    @plants = Plant.all
+    @plants = current_user.plants
 
-    render json: @plants
+    render json: PlantSerializer.new(@plants).serializable_hash[:data].map{|hash| hash[:attributes] } 
   end
 
   # GET /plants/1

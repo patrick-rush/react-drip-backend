@@ -28,16 +28,6 @@ end
     plant.save
 end
 
-# t.string "event_type"
-# t.date "due_date"
-# t.boolean "completed", default: false
-# t.bigint "plant_id", null: false
-# t.datetime "created_at", precision: 6, null: false
-# t.datetime "updated_at", precision: 6, null: false
-# t.index ["plant_id"], name: "index_care_events_on_plant_id"
-# validates :event_type, inclusion: ["water", "fertilize", "repot", "prune"]
-
-
 10.times do
     care_event = CareEvent.new
     event_types = ["water", "fertilize", "repot", "prune"]
