@@ -15,7 +15,7 @@ class PlantsController < ApplicationController
 
   # POST /plants
   def create
-    @plant = Plant.new(plant_params)
+    @plant = current_user.plants.build(plant_params)
 
     if @plant.save
       render json: @plant, status: :created, location: @plant
