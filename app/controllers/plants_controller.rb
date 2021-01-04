@@ -22,7 +22,7 @@ class PlantsController < ApplicationController
     if @plant.save
       render json: @plant, status: :created, location: @plant
     else
-      render json: @plant.errors, status: :unprocessable_entity
+      render json: @plant.errors.full_messages.to_sentence, status: :unprocessable_entity
     end
   end
 
@@ -31,7 +31,7 @@ class PlantsController < ApplicationController
     if @plant.update(plant_params)
       render json: @plant
     else
-      render json: @plant.errors, status: :unprocessable_entity
+      render json: @plant.errors.full_messages.to_sentence, status: :unprocessable_entity
     end
   end
 
