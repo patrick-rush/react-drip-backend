@@ -15,6 +15,8 @@ class PlantsController < ApplicationController
 
   # POST /plants
   def create
+    params["plant"]["watering_frequency"] = params["plant"]["watering_frequency"] + " days"
+    # params["plant"]["fertilizing_frequency"] = params["plant"]["fertilizing_frequency"] + " weeks"
     @plant = current_user.plants.build(plant_params)
 
     if @plant.save
@@ -46,6 +48,6 @@ class PlantsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def plant_params
-      params.require(:plant).permit(:name, :species, :location, :watering_frequency, :fertilizing_frequency, :user_id)
+      params.require(:plant).permit(:name, :species, :location, :watering_frequency, :user_id)
     end
 end
