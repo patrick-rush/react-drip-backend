@@ -3,7 +3,8 @@ class CareEventsController < ApplicationController
 
   # GET /care_events
   def index
-    @care_events = CareEvent.all
+    # byebug
+    @care_events = current_user.care_events_by_date
 
     render json: @care_events
   end
@@ -15,7 +16,8 @@ class CareEventsController < ApplicationController
 
   # POST /care_events
   def create
-    @care_event = CareEvent.new(care_event_params)
+    # @care_event = CareEvent.new(care_event_params)
+    @care_event = current_user.care_events.build(care_event_params)
 
     if @care_event.save
       render json: @care_event, status: :created, location: @care_event
