@@ -28,6 +28,7 @@ end
     plant.save
 end
 
+# Seed CareEvents
 10.times do
     care_event = CareEvent.new
     event_types = ["water", "fertilize", "repot", "prune"]

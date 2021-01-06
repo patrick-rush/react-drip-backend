@@ -11,6 +11,10 @@ class User < ApplicationRecord
   def care_events_by_date
     self.care_events.where(completed: false).order(due_date: :asc)
   end
+
+  def todays_care_events
+    self.care_events.where(due_date: Date.today)
+  end
 end
 
 # START HERE NEED TO CONNECT USER AND CARE EVENTS SOMEHOW

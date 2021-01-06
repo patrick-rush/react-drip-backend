@@ -9,6 +9,11 @@ class CareEventsController < ApplicationController
     render json: @care_events
   end
 
+  def today
+      @care_events = current_user.todays_care_events
+      render json: @care_events
+  end
+
   # GET /care_events/1
   def show
     render json: @care_event
