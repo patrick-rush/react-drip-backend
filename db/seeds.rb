@@ -13,8 +13,8 @@ end
 # Seed Plants
 5.times do 
     plant = Plant.new
-    species = ['ficus', 'spider plant', 'succulent', 'cactus', 'pathos']
-    locations = ['living room', 'kitchen', 'bedroom', 'bathroom', 'dining room']
+    species = ['Ficus', 'Spider Plant', 'Succulent', 'Cactus', 'Pothos']
+    locations = ['Living Room', 'Kitchen', 'Bedroom', 'Bathroom', 'Dining Room']
     random_species_index = Faker::Number.within(range: 0..4)
     random_location_index = Faker::Number.within(range: 0..4)
     random_watering_frequency = Faker::Number.within(range: 1..30)
@@ -31,9 +31,9 @@ end
 # Seed CareEvents
 10.times do
     care_event = CareEvent.new
-    event_types = ["water", "fertilize", "repot", "prune"]
+    # event_types = ["water", "fertilize", "repot", "prune"]
     random_event_type_index = Faker::Number.within(range: 0..3)
-    care_event.event_type = event_types[random_event_type_index]
+    care_event.event_type = "water" # event_types[random_event_type_index]
     care_event.due_date = Faker::Date.between(from: '2021-01-01', to: '2021-12-31')
     care_event.plant_id = Faker::Number.within(range: 1..5)
     care_event.save
