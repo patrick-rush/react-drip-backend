@@ -33,8 +33,16 @@ end
     care_event = CareEvent.new
     # event_types = ["water", "fertilize", "repot", "prune"]
     random_event_type_index = Faker::Number.within(range: 0..3)
-    care_event.event_type = "water" # event_types[random_event_type_index]
+    care_event.event_type = "Water" # event_types[random_event_type_index]
     care_event.due_date = Faker::Date.between(from: '2021-01-01', to: '2021-12-31')
+    care_event.plant_id = Faker::Number.within(range: 1..5)
+    care_event.save
+end
+
+10.times do 
+    care_event = CareEvent.new
+    care_event.event_type = "Water"
+    care_event.due_date = Date.today
     care_event.plant_id = Faker::Number.within(range: 1..5)
     care_event.save
 end
