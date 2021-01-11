@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :notes
   get '/care_events/today' => 'care_events#today'
 
   resources :care_events
-  resources :plants
+  resources :plants do
+    resources :notes, only: [:index]
+  end
   devise_for :users, path: '', path_names: {
     sign_in: 'login',
     sign_out: 'logout',

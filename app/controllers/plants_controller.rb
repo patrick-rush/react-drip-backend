@@ -15,7 +15,7 @@ class PlantsController < ApplicationController
 
   # POST /plants
   def create
-    params["plant"]["watering_frequency"] = params["plant"]["watering_frequency"] + " days"
+    # params["plant"]["watering_frequency"] = params["plant"]["watering_frequency"] + " days"
     # params["plant"]["fertilizing_frequency"] = params["plant"]["fertilizing_frequency"] + " weeks"
     @plant = current_user.plants.build(plant_params)
 

@@ -39,10 +39,19 @@ end
     care_event.save
 end
 
+# Seed CareEvents for Today
 10.times do 
     care_event = CareEvent.new
     care_event.event_type = "Water"
     care_event.due_date = Date.today
     care_event.plant_id = Faker::Number.within(range: 1..5)
     care_event.save
+end
+
+# Seed Notes
+10.times do
+    note = Note.new
+    note.content = Faker::Lorem.sentence
+    note.plant_id = Faker::Number.within(range: 1..5)
+    note.save
 end
