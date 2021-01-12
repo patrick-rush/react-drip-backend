@@ -48,6 +48,15 @@ end
     care_event.save
 end
 
+# Seed Overdue CareEvents
+5.times do 
+    care_event = CareEvent.new
+    care_event.event_type = "Water"
+    care_event.due_date = 4.days.ago
+    care_event.plant_id = Faker::Number.within(range: 1..5)
+    care_event.save
+end
+
 # Seed Notes
 10.times do
     note = Note.new

@@ -14,7 +14,9 @@ class User < ApplicationRecord
   end
 
   def todays_care_events
-    self.care_events.where(due_date: Date.today)
+    date = Date.today
+    # self.care_events.where(due_date: Date.today)
+    self.care_events.where("due_date <= ?", date).order(due_date: :asc)
   end
 end
 

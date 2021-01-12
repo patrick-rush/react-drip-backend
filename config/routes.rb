@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :care_events
   resources :plants do
     resources :notes, only: [:index]
+    resources :care_events, only: [:index]
   end
   devise_for :users, path: '', path_names: {
     sign_in: 'login',

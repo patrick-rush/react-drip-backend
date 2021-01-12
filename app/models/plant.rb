@@ -8,4 +8,8 @@ class Plant < ApplicationRecord
     def notes_by_date
         self.notes.order(created_at: :desc)
     end
+
+    def completed_care_events
+        self.care_events.where(completed: true).order(updated_at: :desc)
+    end
 end

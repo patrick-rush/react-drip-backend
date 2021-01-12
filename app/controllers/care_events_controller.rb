@@ -3,9 +3,12 @@ class CareEventsController < ApplicationController
 
   # GET /care_events
   def index
-    # byebug
-    @care_events = current_user.care_events_by_date
-
+    if params[:plant_id]
+      @care_events = Plant.find_by_id(params[:plant_id]).completed_care_events
+      byebug
+    else
+      @care_events = current_user.care_events_by_date
+    end
     render json: @care_events
   end
 
