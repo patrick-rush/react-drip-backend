@@ -9,6 +9,10 @@ class Plant < ApplicationRecord
         self.notes.order(created_at: :desc)
     end
 
+    def this_plants_care_events
+        self.care_events.order(created_at: :desc)
+    end
+
     def completed_care_events
         self.care_events.where(completed: true).order(updated_at: :desc)
     end

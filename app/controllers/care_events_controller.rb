@@ -4,8 +4,8 @@ class CareEventsController < ApplicationController
   # GET /care_events
   def index
     if params[:plant_id]
-      @care_events = Plant.find_by_id(params[:plant_id]).completed_care_events
-      byebug
+      @care_events = Plant.find_by_id(params[:plant_id]).this_plants_care_events
+      # binding.pry
     else
       @care_events = current_user.care_events_by_date
     end
