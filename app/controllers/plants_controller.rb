@@ -38,6 +38,7 @@ class PlantsController < ApplicationController
   # DELETE /plants/1
   def destroy
     @plant.destroy
+    render status: :ok
   end
 
   private

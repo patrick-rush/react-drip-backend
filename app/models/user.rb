@@ -19,6 +19,3 @@ class User < ApplicationRecord
     self.care_events.where("due_date <= ?", date).order(due_date: :asc)
   end
 end
-
-# START HERE NEED TO CONNECT USER AND CARE EVENTS SOMEHOW
-# IN THE PROCESS OF ADDING SCOPE METHOD TO CARE_EVENTS

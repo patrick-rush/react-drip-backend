@@ -44,6 +44,7 @@ class NotesController < ApplicationController
   # DELETE /notes/1
   def destroy
     @note.destroy
+    render status: :ok
   end
 
   private

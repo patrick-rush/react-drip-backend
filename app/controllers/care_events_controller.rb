@@ -46,6 +46,7 @@ class CareEventsController < ApplicationController
   # DELETE /care_events/1
   def destroy
     @care_event.destroy
+    render status: :accepted
   end
 
   private
