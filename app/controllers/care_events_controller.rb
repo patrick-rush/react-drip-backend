@@ -5,7 +5,6 @@ class CareEventsController < ApplicationController
   def index
     if params[:plant_id]
       @care_events = Plant.find_by_id(params[:plant_id]).this_plants_care_events
-      # binding.pry
     else
       @care_events = current_user.care_events_by_date
     end
@@ -24,7 +23,6 @@ class CareEventsController < ApplicationController
 
   # POST /care_events
   def create
-    # @care_event = CareEvent.new(care_event_params)
     @care_event = current_user.care_events.build(care_event_params)
 
     if @care_event.save
