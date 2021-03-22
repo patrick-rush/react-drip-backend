@@ -19,12 +19,13 @@ class PlantsController < ApplicationController
     # params["plant"]["fertilizing_frequency"] = params["plant"]["fertilizing_frequency"] + " weeks"
     @plant = current_user.plants.build(plant_params)
     # byebug
+    puts @plant
 
     if @plant.save
       # render json: @plant, status: :created, location: @plant
       render json: PlantSerializer.new(@plant).serializable_hash[:data][:attributes], status: :created
     else
-      render json: @plant.errors.full_messages.to_sentence, status: :unprocessable_entity
+      render json: @plant.errors, status: :unprocessable_entity
     end
   end
 
@@ -34,7 +35,7 @@ class PlantsController < ApplicationController
       # render json: @plant
       render json: PlantSerializer.new(@plant).serializable_hash[:data][:attributes], status: :ok
     else
-      render json: @plant.errors.full_messages.to_sentence, status: :unprocessable_entity
+      render json: @plant.errors, status: :unprocessable_entity
     end
   end
 
