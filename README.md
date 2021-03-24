@@ -1,6 +1,6 @@
 # DRIP - Back End
 
-Drip is a web application that can help you manage your houseplants. You can schedule watering events, automatically schedule future ones when you water your plant, keep notes, and adjust watering frequency, as well as record your plant's name, species, and location.
+Drip is a web application that can help you manage your houseplants. You can schedule watering or fertilizing events, automatically schedule future ones when you water your plant, keep notes, and adjust watering frequency, as well as record your plant's name, species, and location.
 
 ## Installation
 
@@ -28,17 +28,15 @@ to start the server.
 
 ## Front End
 
-The front end repo can be found [here](https://github.com/patrick-rush/rails-js-drip-frontend). 
+The front end repo can be found [here](https://github.com/patrick-rush/react-drip-frontend). 
 
-Fork and clone then run `open index.html` to open in your browser.
+Fork and clone then follow the instructions in that repository's README.
 
 ## Roadmap
 
 Future versions of this app may include the following:
 
 * Multi-user interface
-* Different types of care events (fertilize, repot, etc.)
-* Ability to group plants by room or species
 
 ## Versions
 
@@ -55,4 +53,4 @@ You are welcome to submit pull requests as you see fit.
 
 ## Info
 
-This project was created for the Javascript portion of Flatiron School's Software Engineering program. Thank you for checking it out! 
+This project was created for the React portion of Flatiron School's Software Engineering program. Thank you for checking it out! 
