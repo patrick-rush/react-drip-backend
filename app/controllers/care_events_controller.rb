@@ -1,5 +1,6 @@
 class CareEventsController < ApplicationController
   before_action :set_care_event, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /care_events
   def index
