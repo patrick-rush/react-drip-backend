@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :notes
   get '/care_events/today' => 'care_events#today'
+  get '/current_user', to: 'current_user#index'
 
   resources :care_events
   resources :plants do
